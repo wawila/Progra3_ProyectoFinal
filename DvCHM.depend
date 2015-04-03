@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1428082253 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\main.cpp
+	<Incluir.h>
+
+1427954639 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\personajes.cpp
+	"Personajes.h"
+
+1428082451 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\personajes.h
+	<sstream>
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_font.h>
+	<iostream>
+	<cmath>
+
+1425994551 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\archer.cpp
+	"Archer.h"
+
+1425994551 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\archer.h
+
+1428046937 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\cleric.cpp
+	"Cleric.h"
+
+1427997740 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\cleric.h
+	<Personajes.h>
+
+1427937652 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\hero.cpp
+	"Hero.h"
+
+1427937575 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\hero.h
+	<Personajes.h>
+
+1428011250 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\paladin.cpp
+	"Paladin.h"
+
+1428011353 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\paladin.h
+	<Personajes.h>
+
+1427750766 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\nivel.cpp
+	"Nivel.h"
+
+1427750729 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\nivel.h
+
+1428010736 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\incluir.h
+	<sstream>
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_font.h>
+	<allegro5/joystick.h>
+	<allegro5/mouse.h>
+	<iostream>
+	<Personajes.h>
+	<Nivel.h>
+	<Core.h>
+	<Paladin.h>
+	<Cleric.h>
+	<Boss.h>
+	<Swordman.h>
+	<Wizard.h>
+
+1428012067 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\swordman.cpp
+	"Swordman.h"
+
+1428012067 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\swordman.h
+	<Personajes.h>
+
+1428011250 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\wizard.cpp
+	"Wizard.h"
+
+1428011336 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\wizard.h
+	<Personajes.h>
+
+1428042085 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\boss.cpp
+	"Boss.h"
+
+1428012067 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\boss.h
+	<Personajes.h>
+
+1428082361 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\core.h
+	<Incluir.h>
+
+1428082406 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\core.cpp
+	"Core.h"
+
