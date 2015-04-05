@@ -17,6 +17,7 @@ class Paladin : public Personajes
         bool mov5(Personajes* per);
         bool mov6(Personajes* per);
         bool mov7(Personajes* per);
+         void levelBoss(int i);
 
         virtual ~Paladin();
     protected:

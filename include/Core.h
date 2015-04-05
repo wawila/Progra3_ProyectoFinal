@@ -7,13 +7,15 @@ class Core
 {
     public:
 
-    int x = 100;
-    int y = 100;
-    int w = 180;
-    int h = 250;
-    int k = 100;
-    int frame = 0;
-    bool d = true;
+    int x;
+    int y;
+    int w;
+    int h;
+    int k;
+    int contBoss;
+    int frame;
+    bool d;
+    int bossvidamod;
 
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
 
@@ -46,6 +48,12 @@ class Core
     Personajes* boss1;
 
         Core();
+        void limitStats(Personajes* per);
+        void bossAtacar();
+        int perderGanar();
+        void bossLevel();
+        void imprimirFinJuego();
+        void initVariables();
         void menuPrincipal(string t);
         void mainLoop();
         void imprimirPantalla();

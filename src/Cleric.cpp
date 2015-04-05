@@ -2,9 +2,10 @@
 
 Cleric::Cleric()
 {
+    nombre = "Cleric";
     lvl = 1;
     xp = 0;
-    vida = 5750;
+    vida = 5800;
     att = 500;
     ene = 1000;
     armor = 100;
@@ -184,6 +185,8 @@ bool Cleric::mov7(Personajes* per)
     else
         return false;
 }
+
+void Cleric::levelBoss(int x){}
 
 Cleric::~Cleric()
 {

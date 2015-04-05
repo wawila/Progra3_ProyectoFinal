@@ -2,10 +2,11 @@
 
 Swordman::Swordman()
 {
+    nombre = "Swordman";
     lvl = 1;
     xp = 0;
     vida = 6000;
-    att = 1000;
+    att = 1200;
     ene = 500;
     armor = 100;
     frame = 0;
@@ -110,6 +111,7 @@ bool Swordman::mov4(Personajes* per)
 bool Swordman::mov5(Personajes* per){}
 bool Swordman::mov6(Personajes* per){}
 bool Swordman::mov7(Personajes* per){}
+void Swordman::levelBoss(int x){}
 
 Swordman::~Swordman()
 {

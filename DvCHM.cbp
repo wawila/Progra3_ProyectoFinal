@@ -39,7 +39,6 @@
 		<Unit filename="include/Cleric.h" />
 		<Unit filename="include/Core.h" />
 		<Unit filename="include/Incluir.h" />
-		<Unit filename="include/Nivel.h" />
 		<Unit filename="include/Paladin.h" />
 		<Unit filename="include/Personajes.h" />
 		<Unit filename="include/Swordman.h" />
@@ -48,7 +47,6 @@
 		<Unit filename="src/Boss.cpp" />
 		<Unit filename="src/Cleric.cpp" />
 		<Unit filename="src/Core.cpp" />
-		<Unit filename="src/Nivel.cpp" />
 		<Unit filename="src/Paladin.cpp" />
 		<Unit filename="src/Personajes.cpp" />
 		<Unit filename="src/Swordman.cpp" />

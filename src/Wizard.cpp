@@ -2,9 +2,10 @@
 
 Wizard::Wizard()
 {
+    nombre = "Wizard";
     lvl = 1;
     xp = 0;
-    vida = 5750;
+    vida = 5800;
     att = 1000;
     ene = 1000;
     armor = 100;
@@ -61,6 +62,7 @@ bool Wizard::mov5(Personajes* per)
 
 bool Wizard::mov6(Personajes* per){}
 bool Wizard::mov7(Personajes* per){}
+void Wizard::levelBoss(int x){}
 
 Wizard::~Wizard()
 {

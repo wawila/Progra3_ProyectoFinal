@@ -24,57 +24,6 @@ void init()
 
 };
 
-void prueba2()
-{
-    bool d  = true;
-    int x = 0;
-    int y = 0;
-
-    ALLEGRO_DISPLAY *display = NULL;
-    ALLEGRO_BITMAP *fondo = NULL;
-    ALLEGRO_BITMAP *personaje = NULL;
-    ALLEGRO_KEYBOARD_STATE keyState;
-
-    display = al_create_display(580, 444);
-    al_flip_display();
-    fondo = al_load_bitmap("assets/image/Translucent.png");
-    personaje = al_load_bitmap("assets/anim/Sword5.png");
-
-    while(d)
-    {
-        //ALLEGRO_EVENT events;
-        //al_wait_for_event(event_queue, &events);
-        al_get_keyboard_state(&keyState);
-
-        if(al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))
-        {
-            cout<<"ESC"<<endl;
-            d = false;
-        }
-
-        al_draw_bitmap(fondo, 0 ,0, 0);
-
-        for(int h = 0; h <= 768; h += 192)
-        {
-            for(int w = 0; w <= 768; w += 192)
-            {
-                al_draw_bitmap(fondo, 0 ,0, 0);
-                al_draw_bitmap_region(personaje, w, h, 192, 192, 192, 192, 0 );
-                al_flip_display();
-                cout<<" w "<<w<<endl;
-                al_rest(0.08);
-            }
-            cout<<" h "<<h<<endl;
-
-            al_flip_display();
-            al_rest(0.025);
-
-        }
-        cout<<"--------------"<<endl;
-    }
-
-}
-
 void prueba3()
 {
     bool d  = true;
@@ -230,6 +179,7 @@ void start()
         if(al_key_down(&keyState, ALLEGRO_KEY_I)){
             cout<<"Viendo Instrucciones"<<endl;
             core->menuPrincipal("Instrucciones");
+            al_rest(0.1);
         }else
          if(al_key_down(&keyState, ALLEGRO_KEY_ESCAPE)){
             i = true;

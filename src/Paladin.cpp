@@ -2,6 +2,7 @@
 
 Paladin::Paladin()
 {
+    nombre = "Paladin";
     lvl = 1;
     xp = 0;
     vida = 11000;
@@ -98,6 +99,7 @@ bool Paladin::mov4(Personajes* per)
 bool Paladin::mov5(Personajes* per){}
 bool Paladin::mov6(Personajes* per){}
 bool Paladin::mov7(Personajes* per){}
+void Paladin::levelBoss(int x){}
 
 Paladin::~Paladin()
 {

@@ -20,7 +20,7 @@ public:
     ALLEGRO_BITMAP *sprite;
     ALLEGRO_BITMAP *anim1;
 
-
+    string nombre;
     short lvl;
     short xp;
     float vida;
@@ -45,29 +45,27 @@ public:
     /**
 
         To Do:
+        - Limitar Vida y Energia
         - Validar si tienen suficiente energia
         X Agregar las animaciones
         - Wizard
-        - !!!Trunos (parametro de frames para el boss)
+        X !!!Trunos (parametro de frames para el boss)
         - !!!Enemigos
         - Regen (Energia)
-        - !!!Pantalla de Ganar y Perder
+        X !!!Pantalla de Ganar y Perder
             - Hacer una funcion para ver cuales siguen vivos
                 si los 4 ya estan muertos pierde
             - Hacer una funcion para ver a quiene ya mato
                 si mato a los tres gana
-        - !!!Niveles
-        - Enemigos Debiles y Bosses
+        X !!!Niveles
+        - Enemigos Debiles
+        X !!Bosses
         X Ordenar Codigo
         X !!!Menu
         X Mecanicas del Juego
         - !!!Guardar Mejores Scores (3)
         X Herencia y Polimorfismo
         - Color de Vida
-        -----------------Debug------------------
-        - Funciones para subir de nivel
-        - Funciones para imprimir info
-        - Imprimir lo que hace en cada ataque
         -----------------Extra------------------
         - Items
         - Free Roam
@@ -86,6 +84,7 @@ public:
     virtual bool mov5(Personajes* per) = 0;
     virtual bool mov6(Personajes* per) = 0;
     virtual bool mov7(Personajes* per) = 0;
+    virtual void levelBoss(int i) = 0;
 
     virtual bool sufEne(int x)
     {
