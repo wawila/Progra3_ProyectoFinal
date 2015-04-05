@@ -15,13 +15,13 @@
 #include <allegro5/joystick.h>
 #include <allegro5/mouse.h>
 #include <iostream>
-
+#include <sstream>
+#include <fstream>
 /**
     Core Juego
 */
 
 #include <Personajes.h>
-#include <Nivel.h>
 #include <Core.h>
 
 /**

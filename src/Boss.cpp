@@ -2,7 +2,7 @@
 
 Boss::Boss()
 {
-    nombre = "Boss";
+    nombre = "Boss1";
     vida = 110000;
     att = 250;
     armor = 5000;
@@ -23,6 +23,7 @@ void Boss::levelBoss(int x)
     switch(x)
     {
     case 1:
+        nombre = "Boss1";
         vida = 110000;
         att = 500;
         armor = 5000;
@@ -30,6 +31,7 @@ void Boss::levelBoss(int x)
         target = 1;
         break;
     case 2:
+        nombre = "Boss2";
         vida = 115000;
         att = 750;
         armor = 10000;
@@ -37,6 +39,7 @@ void Boss::levelBoss(int x)
         target = 1;
         break;
     case 3:
+        nombre = "Boss3";
         vida = 125000;
         att = 1500;
         armor = 15000;

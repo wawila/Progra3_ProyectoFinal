@@ -22,15 +22,19 @@ Cleric::Cleric()
 
 /**
     Barrier:
-        Le da a un peronaje el 10% del producto de su
-        escudo por su ataque y hace el attaque 0;
+        Le da a todos el 10% del producto de su
+        escudo por su ataque y hace el ataque 0;
         Si no tiene escudo le da a el un escudo de 100;
         Si no tiene ataque no hace nada
 
 */
+int escudo = 0;
+
 
 bool Cleric::mov1(Personajes* per)
 {
+    mov5(per);
+
     if(!shadowstance && vida > 0 && att > 0)
     {
         if(armor > 0)
@@ -40,8 +44,16 @@ bool Cleric::mov1(Personajes* per)
         else
             armor = 100;
 
-        att = 0;
 
+        escudo++;
+
+        if(escudo == 4)
+        {
+            att = 0;
+            escudo = 0;
+        }
+
+        cout<<per->nombre<<" Barrier  "<<escudo<<endl;
         return true;
     }
     else
@@ -56,6 +68,8 @@ bool Cleric::mov1(Personajes* per)
 */
 bool Cleric::mov2(Personajes* per)
 {
+    mov6(per);
+
     if(!shadowstance && vida > 0)
     {
         if(att < 500)
@@ -105,6 +119,8 @@ bool Cleric::mov3(Personajes* per)
 */
 bool Cleric::mov4(Personajes* per)
 {
+
+    mov7(per);
     if(!shadowstance && vida > 0)
     {
         att = vida*0.25;

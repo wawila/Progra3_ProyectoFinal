@@ -48,6 +48,7 @@ class Core
     Personajes* boss1;
 
         Core();
+        void score();
         void limitStats(Personajes* per);
         void bossAtacar();
         int perderGanar();

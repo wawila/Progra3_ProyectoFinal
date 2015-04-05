@@ -230,11 +230,11 @@ void Core::mainLoop()
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cout<<" Vida Paladin "<<paladin->vida<<endl<<" Armadura Paladin "<<paladin->armor<<endl;
                         animacion("Special11", 768);
-                        paladin->mov3(boss1);
+                        paladin->mov3(paladin);
                         cout<<"Despues:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cout<<" Vida P "<<paladin->vida<<endl<<" Armadura Paladin "<<paladin->armor<<endl;
                         al_rest(0.05);
                     }
                     rgba = al_map_rgba(0, 0, 65, 255);
@@ -244,11 +244,11 @@ void Core::mainLoop()
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
-                        animacion("State6", 384);
-                        paladin->mov4(boss1);
+                        cout<<" Vida Paladin "<<paladin->vida<<endl<<" Armadura Paladin "<<paladin->armor<<endl;
+                        animacion("State6", 768);
+                        paladin->mov3(paladin);
                         cout<<"Despues:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cout<<" Vida P "<<paladin->vida<<endl<<" Armadura Paladin "<<paladin->armor<<endl;
                         al_rest(0.05);
                     }
                     rgba = al_map_rgba(0, 0, 30, 255);
@@ -330,12 +330,11 @@ void Core::mainLoop()
                     k = 28;
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
-                        cout<<"Antes:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
                         animacion("Heal4", 768);
-                        cleric->mov1(boss1);
-                        cout<<"Despues:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cleric->mov1(paladin);
+                        cleric->mov1(swordman);
+                        cleric->mov1(wizard);
+                        cleric->mov1(cleric);
                         al_rest(0.05);
                     }
                     rgba = al_map_rgba(0, 255, 0, 255);
@@ -344,12 +343,10 @@ void Core::mainLoop()
                     k = 56;
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
-                        cout<<"Antes:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
-                        animacion("Heal5", 384);
-                        cleric->mov2(boss1);
-                        cout<<"Despues:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cleric->mov2(paladin);
+                        cleric->mov2(swordman);
+                        cleric->mov2(wizard);
+                        cleric->mov2(cleric);
                         al_rest(0.05);
                     }
                     rgba = al_map_rgba(0, 130, 0, 255);
@@ -358,12 +355,11 @@ void Core::mainLoop()
                     k = 84;
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
-                        cout<<"Antes:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
                         animacion("Light2", 768);
-                        cleric->mov3(boss1);
-                        cout<<"Despues:"<<endl;
-                        cout<<" Vida Boss "<<boss1->vida<<endl<<" Armadura Boss "<<boss1->armor<<endl;
+                        cleric->mov3(paladin);
+                        cleric->mov3(swordman);
+                        cleric->mov3(wizard);
+                        cleric->mov3(cleric);
                         al_rest(0.05);
                     }
                     rgba = al_map_rgba(0, 65, 0, 255);
@@ -455,6 +451,7 @@ int Core::perderGanar()
 
     if(boss1->vida <=0 && contBoss == 3)
     {
+        score();
         cout<<"Has Ganado!"<<endl;
         return 0;
     }
@@ -508,7 +505,8 @@ void Core::bossLevel()
 
 void Core::bossAtacar()
 {
-    if(frame % 30 == 0 && boss1->vida > 0){
+    if(frame % 30 == 0 && boss1->vida > 0)
+    {
         int rnd = rand() %100 +1;
 
         if(rnd >= 1 && rnd < 45 && paladin->vida > 0)
@@ -524,10 +522,10 @@ void Core::bossAtacar()
             boss1->mov6(cleric);
 
         if(rnd >= 90 && rnd <= 100
-           && paladin->vida > 0
-           || paladin->vida > 0
-           || paladin->vida > 0
-           || paladin->vida > 0)
+                && paladin->vida > 0
+                || paladin->vida > 0
+                || paladin->vida > 0
+                || paladin->vida > 0)
         {
             boss1->mov6(paladin);
             boss1->mov6(swordman);
@@ -548,6 +546,48 @@ void Core::limitStats(Personajes* per)
 
     if(per->ene < 0)
         per->ene = 0;
+
+    if(per->nombre == "Paladin")
+    {
+        if(per->vida > 11000)
+            per->vida = 11000;
+    }
+
+    if(per->nombre == "Swordman")
+    {
+        if(per->vida > 6000)
+            per->vida = 6000;
+    }
+
+    if(per->nombre == "Wizard")
+    {
+        if(per->vida > 5800)
+            per->vida = 5800;
+    }
+
+    if(per->nombre == "Cleric")
+    {
+        if(per->vida > 5800)
+            per->vida = 5800;
+    }
+
+    if(per->nombre == "Boss1")
+    {
+        if(per->vida > 110000)
+            per->vida = 110000;
+    }
+
+    if(per->nombre == "Boss2")
+    {
+        if(per->vida > 115000)
+            per->vida = 115000;
+    }
+
+    if(per->nombre == "Boss3")
+    {
+        if(per->vida > 125000)
+            per->vida = 125000;
+    }
 }
 
 /**
@@ -585,6 +625,39 @@ void Core::animacion(string t, int i)
 }
 
 
+int Primero = 99999, Segundo = 99999, Tercero = 99999;
+void Core::score()
+{
+    ifstream in("HighScore.txt");
+    in>>Primero;
+    in>>Segundo;
+    in>>Tercero;
+
+    in.close();
+
+    ofstream out("HighScore.txt", ios::in);
+
+    if(frame<Primero){
+        out<<frame<<endl;
+        out<<Primero<<endl;
+        out<<Segundo<<endl;
+    }else if(frame<Segundo && frame>Primero){
+        out<<Primero<<endl;
+        out<<frame<<endl;
+        out<<Segundo<<endl;
+    }else if(frame<Tercero && frame>Tercero){
+        out<<Primero<<endl;
+        out<<Segundo<<endl;
+        out<<frame<<endl;
+    }else
+        out<<Primero<<endl;
+        out<<Segundo<<endl;
+        out<<Tercero<<endl;
+    out.close();
+
+    cout<<"Tu Score: "<<frame;
+
+}
 
 Core::~Core()
 {
