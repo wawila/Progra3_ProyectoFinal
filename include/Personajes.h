@@ -29,6 +29,11 @@ public:
     float armor;
     float x;
     float y;
+
+    bool shadowstance;
+
+    ALLEGRO_COLOR rgba;
+
     /**
     0- Nadie
     1- Paladin
@@ -41,6 +46,7 @@ public:
     int frame;
 
     virtual ~Personajes(){};
+    virtual bool getShadowstance(){};
 
     /**
 

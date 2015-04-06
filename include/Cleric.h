@@ -8,6 +8,7 @@ class Cleric: public Personajes
 {
     public:
         Cleric();
+        bool getShadowstance();
         bool shadowstance;
 
         // agregar si tiene suficiente energia

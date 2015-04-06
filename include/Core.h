@@ -38,6 +38,8 @@ class Core
     ALLEGRO_BITMAP *indpl = NULL;
     ALLEGRO_BITMAP *menu = NULL;
     ALLEGRO_BITMAP *menupl = NULL;
+    ALLEGRO_BITMAP *menunom = NULL;
+    ALLEGRO_BITMAP *menudesc = NULL;
 
     ALLEGRO_COLOR rgba;
 

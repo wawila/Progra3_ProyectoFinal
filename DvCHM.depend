@@ -5,7 +5,7 @@
 1427954639 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\personajes.cpp
 	"Personajes.h"
 
-1428135036 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\personajes.h
+1428300365 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\personajes.h
 	<sstream>
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
@@ -22,10 +22,10 @@
 
 1425994551 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\archer.h
 
-1428209581 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\cleric.cpp
+1428303034 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\cleric.cpp
 	"Cleric.h"
 
-1428104768 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\cleric.h
+1428300253 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\cleric.h
 	<Personajes.h>
 
 1427937652 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\hero.cpp
@@ -85,9 +85,9 @@
 1428012067 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\boss.h
 	<Personajes.h>
 
-1428209922 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\core.h
+1428302063 c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\include\core.h
 	<Incluir.h>
 
-1428212957 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\core.cpp
+1428304632 source:c:\users\david chavarria\desktop\juegoprogra3\codigo\dvchm\src\core.cpp
 	"Core.h"
 

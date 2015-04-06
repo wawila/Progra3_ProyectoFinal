@@ -26,16 +26,18 @@ void Core::initVariables()
     indpl = al_load_bitmap("assets/image/IndicadorPlayer.png");
     menu = al_load_bitmap("assets/image/Background.png");
     menupl = al_load_bitmap("assets/image/Swordman1.png");
+    menunom = al_load_bitmap("assets/image/Nombres.png");
+    menudesc = al_load_bitmap("assets/image/desc/Swordman1.png");
 
     x = 100;
     y = 100;
     w = 180;
     h = 250;
-    k = 100;
+    k = 28;
     contBoss = 1;
     frame = 0;
     d = true;
-    bossvidamod = 137.5;
+    bossvidamod = 139.95;
 }
 
 void Core::menuPrincipal(string b)
@@ -134,6 +136,7 @@ void Core::mainLoop()
                 switch(y)
                 {
                 case 100:
+                    menudesc = al_load_bitmap("assets/image/desc/Swordman1.png");
                     k = 28;
                     rgba = al_map_rgba(255, 0, 0, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
@@ -149,6 +152,7 @@ void Core::mainLoop()
                     break;
                 case 102:
                     k = 56;
+                    menudesc = al_load_bitmap("assets/image/desc/Swordman2.png");
                     rgba = al_map_rgba(130, 0, 0, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
@@ -163,6 +167,7 @@ void Core::mainLoop()
                     break;
                 case 104:
                     k = 84;
+                    menudesc = al_load_bitmap("assets/image/desc/Swordman3.png");
                     rgba = al_map_rgba(65, 0, 0, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
@@ -176,6 +181,7 @@ void Core::mainLoop()
                     }
                     break;
                 case 106:
+                    menudesc = al_load_bitmap("assets/image/desc/Swordman4.png");
                     k = 112;
                     rgba = al_map_rgba(30, 0, 0, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
@@ -199,6 +205,7 @@ void Core::mainLoop()
                 {
                 case 100:
                     k = 28;
+                    menudesc = al_load_bitmap("assets/image/desc/Paladin1.png");
                     rgba = al_map_rgba(0, 0, 255, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
@@ -213,6 +220,7 @@ void Core::mainLoop()
                     break;
                 case 102:
                     k = 56;
+                    menudesc = al_load_bitmap("assets/image/desc/Paladin2.png");
                     rgba = al_map_rgba(0, 0, 130, 255);
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
@@ -227,6 +235,7 @@ void Core::mainLoop()
                     break;
                 case 104:
                     k = 84;
+                    menudesc = al_load_bitmap("assets/image/desc/Paladin3.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -241,6 +250,7 @@ void Core::mainLoop()
                     break;
                 case 106:
                     k = 112;
+                    menudesc = al_load_bitmap("assets/image/desc/Paladin4.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -263,6 +273,7 @@ void Core::mainLoop()
                 {
                 case 100:
                     k = 28;
+                    menudesc = al_load_bitmap("assets/image/desc/NA.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -277,6 +288,7 @@ void Core::mainLoop()
                     break;
                 case 102:
                     k = 56;
+                    menudesc = al_load_bitmap("assets/image/desc/NA.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -291,6 +303,7 @@ void Core::mainLoop()
                     break;
                 case 104:
                     k = 84;
+                    menudesc = al_load_bitmap("assets/image/desc/NA.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -305,6 +318,7 @@ void Core::mainLoop()
                     break;
                 case 106:
                     k = 112;
+                    menudesc = al_load_bitmap("assets/image/desc/NA.png");
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -323,11 +337,21 @@ void Core::mainLoop()
             case 106:
                 w = 78;
                 h = 294;
-                menupl = al_load_bitmap("assets/image/Cleric1.png");
+                if(cleric->getShadowstance() == true)
+                    menupl = al_load_bitmap("assets/image/Cleric2.png");
+                 if(cleric->getShadowstance() == false)
+                    menupl = al_load_bitmap("assets/image/Cleric1.png");
+
                 switch(y)
                 {
                 case 100:
                     k = 28;
+
+                    if(cleric->getShadowstance() == false)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric1.png");
+                 if(cleric->getShadowstance() == true)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric5.png");
+
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         animacion("Heal4", 768);
@@ -341,8 +365,15 @@ void Core::mainLoop()
                     break;
                 case 102:
                     k = 56;
+
+                    if(cleric->getShadowstance() == false)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric2.png");
+                 if(cleric->getShadowstance() == true)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric6.png");
+
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
+                        animacion("Heal5", 384);
                         cleric->mov2(paladin);
                         cleric->mov2(swordman);
                         cleric->mov2(wizard);
@@ -353,6 +384,12 @@ void Core::mainLoop()
                     break;
                 case 104:
                     k = 84;
+
+                    if(cleric->getShadowstance() == false)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric3.png");
+                 if(cleric->getShadowstance() == true)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric7.png");
+
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         animacion("Light2", 768);
@@ -366,6 +403,12 @@ void Core::mainLoop()
                     break;
                 case 106:
                     k = 112;
+
+                    if(cleric->getShadowstance() == false)
+                    menudesc = al_load_bitmap("assets/image/desc/Cleric4.png");
+                 if(cleric->getShadowstance() == true)
+                    menudesc = al_load_bitmap("assets/image/desc/NA.png");
+
                     if(al_key_down(&keyState, ALLEGRO_KEY_ENTER))
                     {
                         cout<<"Antes:"<<endl;
@@ -406,25 +449,28 @@ void Core::imprimirPantalla()
 {
     al_draw_scaled_bitmap(fondo, 0, 0, 580, 444, 0, 0, 800 ,444 ,0);
     al_draw_scaled_bitmap(bg, 0, 0, 580, 444, 0, 0, 800, 444, 0);
-    al_draw_scaled_bitmap(menu, 0, 0, 800, 200, 0, 445, 800, 155, 0);
-    al_draw_bitmap(menupl, 300, 450, 0);
-    al_draw_tinted_scaled_bitmap(barra, rgba, 0, 0, 10, 50, 1, 550, 35, 35, 0);
+    al_draw_bitmap(menu, 0, 445, 0);
+    al_draw_bitmap(menupl, 457, 453, 0);
+    al_draw_bitmap(menunom, 5, 440, 0);
+    al_draw_bitmap(menudesc, 660, 455, 0);
+    al_draw_tinted_scaled_bitmap(barra, rgba, 0, 0, 10, 50, 764, 1, 35, 35, 0);
 
-    // Vida Boss1
-    al_draw_tinted_scaled_bitmap(barra, al_map_rgba(255, 255, 0, 255)   , 0, 0, 10, 50, 1, 589, boss1->vida/bossvidamod, 10, 0);
-    al_draw_tinted_scaled_bitmap(barra, al_map_rgba(255, 0, 0, 255)     , 0, 0, 10, 50, 1, 579, swordman->vida/7.5, 10, 0);
-    al_draw_tinted_scaled_bitmap(barra, al_map_rgba(0, 255, 0, 255)     , 0, 0, 10, 50, 1, 569, paladin->vida/13.75, 10, 0);
-    al_draw_tinted_scaled_bitmap(barra, al_map_rgba(0, 0, 255, 255)     , 0, 0, 10, 50, 1, 559, cleric->vida/7.25, 10, 0);
-    al_draw_tinted_scaled_bitmap(barra, al_map_rgba(255, 0, 255, 255)   , 0, 0, 10, 50, 1, 549, wizard->vida/7.25, 10, 0);
+    // Vida Personajes
+    al_draw_tinted_scaled_bitmap(barra, boss1->rgba     , 0, 0, 10, 50, 7, 571, boss1->vida/bossvidamod-5, 23, 0);
+    al_draw_tinted_scaled_bitmap(barra, swordman->rgba  , 0, 0, 10, 50, 207, 453, swordman->vida/32.26-2, 18, 0);
+    al_draw_tinted_scaled_bitmap(barra, paladin->rgba   , 0, 0, 10, 50, 207, 481, paladin->vida/59.14-2, 18, 0);
+    al_draw_tinted_scaled_bitmap(barra, wizard->rgba    , 0, 0, 10, 50, 207, 509, wizard->vida/31.18-2, 18, 0);
+    al_draw_tinted_scaled_bitmap(barra, cleric->rgba    , 0, 0, 10, 50, 207, 537, cleric->vida/31.18-2, 18, 0);
+
 
     al_draw_scaled_bitmap(pl1, 0, 0, 197, 195, 86, 164, 167, 165, 0);
-    al_draw_bitmap(pl2, 12, 332-140, ALLEGRO_FLIP_HORIZONTAL);
+    al_draw_bitmap(pl2, 12, 192, ALLEGRO_FLIP_HORIZONTAL);
     al_draw_scaled_bitmap(pl4, 0, 0, 194, 210, 208, 196, 185, 170, ALLEGRO_FLIP_HORIZONTAL);
     al_draw_scaled_bitmap(pl3, 0, 0, 216, 235, 108, 242, 180, 195, ALLEGRO_FLIP_HORIZONTAL);
 //       al_draw_bitmap(minion2, 50, 300, 0);
     al_draw_bitmap(boss, 430, 120, 0);
-    al_draw_bitmap(indpl, w+3, h-140, 0);
-    al_draw_scaled_rotated_bitmap(indpl, 22, 25, 275, k+430, 0.8, 0.8, -ALLEGRO_PI/2, 0);
+    al_draw_bitmap(indpl, w+14, h-115, ALLEGRO_FLIP_HORIZONTAL);
+    al_draw_scaled_rotated_bitmap(indpl, 22, 25, 435, k+425, 0.8, 0.8, -ALLEGRO_PI/2, 0);
 
     //     al_draw_bitmap(minion1, 550, 300, 0);
     al_flip_display();
@@ -489,7 +535,7 @@ void Core::bossLevel()
         boss1->levelBoss(contBoss);
         fondo = al_load_bitmap("assets/image/Lava2.png");
         boss = al_load_bitmap("assets/image/Demon.png");
-        bossvidamod = 143.75;
+        bossvidamod = 146.31;
     }
 
     if(boss1->vida <= 0 && contBoss == 2)
@@ -499,7 +545,7 @@ void Core::bossLevel()
         fondo = al_load_bitmap("assets/image/LavaCave1.png");
         bg = al_load_bitmap("assets/image/LavaCave2.png");
         boss = al_load_bitmap("assets/image/Evilgod.png");
-        bossvidamod = 156.25;
+        bossvidamod = 159.03;
     }
 }
 
@@ -549,45 +595,85 @@ void Core::limitStats(Personajes* per)
 
     if(per->nombre == "Paladin")
     {
-        if(per->vida > 11000)
+        if(per->vida >= 11000)
+        {
             per->vida = 11000;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Swordman")
     {
-        if(per->vida > 6000)
+        if(per->vida >= 6000)
+        {
             per->vida = 6000;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Wizard")
     {
-        if(per->vida > 5800)
+        if(per->vida >= 5800)
+        {
             per->vida = 5800;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Cleric")
     {
-        if(per->vida > 5800)
+        if(per->vida >= 5800)
+        {
             per->vida = 5800;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Boss1")
     {
-        if(per->vida > 110000)
+        if(per->vida >= 110000)
+        {
             per->vida = 110000;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Boss2")
     {
-        if(per->vida > 115000)
+        if(per->vida >= 115000)
+        {
             per->vida = 115000;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
 
     if(per->nombre == "Boss3")
     {
-        if(per->vida > 125000)
+        if(per->vida >= 125000)
+        {
             per->vida = 125000;
+            per->rgba = al_map_rgba(0, 255, 0, 255);
+        }
+        else
+            per->rgba = al_map_rgba(255, 0, 0, 255);
     }
+
+    if(per->armor > 0)
+        per->rgba = al_map_rgba(130, 130, 130, 255);
+
+
 }
 
 /**
@@ -637,22 +723,28 @@ void Core::score()
 
     ofstream out("HighScore.txt", ios::in);
 
-    if(frame<Primero){
+    if(frame<Primero)
+    {
         out<<frame<<endl;
         out<<Primero<<endl;
         out<<Segundo<<endl;
-    }else if(frame<Segundo && frame>Primero){
+    }
+    else if(frame<Segundo && frame>Primero)
+    {
         out<<Primero<<endl;
         out<<frame<<endl;
         out<<Segundo<<endl;
-    }else if(frame<Tercero && frame>Tercero){
+    }
+    else if(frame<Tercero && frame>Tercero)
+    {
         out<<Primero<<endl;
         out<<Segundo<<endl;
         out<<frame<<endl;
-    }else
+    }
+    else
         out<<Primero<<endl;
-        out<<Segundo<<endl;
-        out<<Tercero<<endl;
+    out<<Segundo<<endl;
+    out<<Tercero<<endl;
     out.close();
 
     cout<<"Tu Score: "<<frame;

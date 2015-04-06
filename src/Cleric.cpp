@@ -18,7 +18,10 @@ Cleric::Cleric()
     mov1 mov2 mov3 y mov4
 */
 
-
+bool Cleric::getShadowstance()
+{
+    return shadowstance;
+}
 
 /**
     Barrier:
@@ -29,8 +32,6 @@ Cleric::Cleric()
 
 */
 int escudo = 0;
-
-
 bool Cleric::mov1(Personajes* per)
 {
     mov5(per);
@@ -51,6 +52,7 @@ bool Cleric::mov1(Personajes* per)
         {
             att = 0;
             escudo = 0;
+
         }
 
         cout<<per->nombre<<" Barrier  "<<escudo<<endl;
@@ -94,6 +96,7 @@ bool Cleric::mov2(Personajes* per)
         Le suma su ataque a los demas personajes
         por el siguiente, haciendo su ataque 0
 */
+int arma = 0;
 bool Cleric::mov3(Personajes* per)
 {
     // Crear instancias de todos los otros persones
@@ -103,31 +106,39 @@ bool Cleric::mov3(Personajes* per)
         if(att > 0)
         {
             per->att += att;
-            att = 0;
-            return true;
         }
-        else
-            return false;
 
-    }
+        arma++;
+
+        if(arma == 4)
+        {
+            att = 0;
+            arma = 0;
+
+        }
+
+    }else
+        mov7(per);
+
+        return false;
+
 }
 
 /**
     Shadow Stance:
         Iguala su ataque a vida*0.25 y
-        cambia sus ataques
+        le da ataques nuevos
 */
 bool Cleric::mov4(Personajes* per)
 {
 
-    mov7(per);
+
     if(!shadowstance && vida > 0)
     {
         att = vida*0.25;
         shadowstance = true;
         return true;
-    }
-    else
+    }else
         return false;
 }
 
@@ -167,9 +178,6 @@ bool Cleric::mov5(Personajes* per)
     Soul Burn:
         Ataque por el valor de su energia, ignora escudos;
         le resta 15% a la vida y divide el energia en 2
-            o
-        Ataque por el valor de su escudo, ignora escudos;
-        le resta 15% a la vida y divide el escudo en 2
 */
 bool Cleric::mov6(Personajes* per)
 {
